@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth import login,logout,authenticate
 from django.http import HttpResponseRedirect
-from miapp.models import articulos
+from miapp.models import articulos,item
 
 # Create your views here.
 
@@ -13,6 +13,10 @@ def indice(request):
 def tipo(request,tipo_nombre):
 	lista_articulos = articulos.objects.filter(tipo=tipo_nombre)
 	return render (request, 'miapp/articulos.html', {'lista_articulos': lista_articulos})
+
+def tallas(request,articulo_id):
+	lista_tallas = item.objects.filter(articulos=articulo_id)
+	return render (request, 'miapp/tallas.html', {'lista_tallas': lista_tallas})
 
 def registro(request):
 	if request.method == 'POST':

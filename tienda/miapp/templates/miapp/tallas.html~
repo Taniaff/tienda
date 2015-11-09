@@ -1,0 +1,18 @@
+	<head>
+		<title>tallas</title>
+	</head>
+	<body>
+	<table border="1" style="width:100%">
+		<tr>
+			<td>TALLA</td>
+			<td>COLOR</td>
+					
+		</tr>
+		<tr>
+			{% for talla in lista_tallas %}
+				<td>{{ talla.talla }}</td>
+				<td>{{ talla.color }}</td>
+		        {% endfor %}
+		</tr>
+	</table>	
+	</body>
