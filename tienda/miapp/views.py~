@@ -14,6 +14,10 @@ def pantalon(request):
 	lista_pantalon = articulos.objects.filter(tipo='pantalon')
 	return render (request, 'miapp/pantalon.html', {'lista_pantalon': lista_pantalon})
 
+def camisa(request):
+	lista_camisa = articulos.objects.filter(tipo='camisa')
+	return render (request, 'miapp/camisa.html', {'lista_camisa': lista_camisa})
+
 def registro(request):
 	if request.method == 'POST':
 		form = UserCreationForm(request.POST)

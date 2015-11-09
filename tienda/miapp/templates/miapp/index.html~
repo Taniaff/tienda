@@ -25,6 +25,7 @@
 				{% for Articulo in lista_articulos %}
 					<tr>
 						<td><a href="{% url 'pantalon' %}">{{ Articulo.tipo }}</a><td>
+						<td><a href="{% url 'camisa' %}">{{ Articulo.tipo }}</a><td>
 					</tr>
 				{% endfor %}
 			</table>

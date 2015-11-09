@@ -10,9 +10,9 @@ def indice(request):
 	lista_articulos = articulos.objects.values('tipo').distinct()
 	return render (request, 'miapp/index.html', {'lista_articulos': lista_articulos})
 
-def pantalon(request):
-	lista_pantalon = articulos.objects.filter(tipo='pantalon')
-	return render (request, 'miapp/pantalon.html', {'lista_pantalon': lista_pantalon})
+def tipo(request,tipo_nombre):
+	lista_articulos = articulos.objects.filter(tipo=tipo_nombre)
+	return render (request, 'miapp/articulos.html', {'lista_articulos': lista_articulos})
 
 def registro(request):
 	if request.method == 'POST':
