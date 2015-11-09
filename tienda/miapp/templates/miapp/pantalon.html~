@@ -1,0 +1,12 @@
+	<head>
+		<title>Pantalones</title>
+	</head>
+	<body>
+		<h1></h1>
+		<ul>
+			{% for pantalon in lista_pantalon %}
+				<li>{{ pantalon }}</li>
+			{% endfor %}
+		</ul>
+		
+	</body>
