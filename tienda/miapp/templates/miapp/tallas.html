@@ -15,6 +15,19 @@
 				<td>{{ talla.color }}</td>
 			</tr>
 		        {% endfor %}
-		
-	</table>	
+	</table>
+
+	{% if lista_comentarios %}
+		<p>Comentarios de los usuarios:</p>
+		{% for comentario in lista_comentarios %}
+		<li>{{ comentario.comentario }}</li>
+		{% endfor %}
+	{% else %}
+		<p>No hay comentarios</p>			
+	{% endif %}
+
+	<form method="POST"> {% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit">Guardar</button>
+	</form>	
 	</body>
