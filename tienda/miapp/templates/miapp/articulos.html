@@ -6,12 +6,15 @@
 		<table border="2">
 		<tr>
 			<td>NOMBRE</td>
+			<td>PRECIO</td>
 			<td>FOTO</td>
+
 					
 		</tr>
 			{% for articulos in lista_articulos %}
 			<tr>
 				<td><a href="{% url 'tallas' articulos.id %}">{{ articulos.nombre }}</a></td>
+				<td>{{ articulos.precio }}</td>
 				<td><img src="/{{articulos.foto}}"></td>
 			</tr>
 			{% endfor %}
