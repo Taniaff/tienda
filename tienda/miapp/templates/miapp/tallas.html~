@@ -3,6 +3,7 @@
 	</head>
 	<body>
 	<table border="1" style="width:100%">
+		<img src="/{{articulo.foto}}">
 		<tr>
 			<td>TALLA</td>
 			<td>COLOR</td>
@@ -18,7 +19,7 @@
 	</table>
 
 	{% if lista_comentarios %}
-		<p>Comentarios de los usuarios</p>
+		<p>Comentarios de los usuarios:</p>
 		{% for comentario in lista_comentarios %}
 		<li>{{ comentario.comentario }}</li>
 		{% endfor %}

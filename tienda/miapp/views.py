@@ -4,6 +4,8 @@ from django.contrib.auth import login,logout,authenticate
 from django.http import HttpResponseRedirect
 from miapp.models import articulos,item,comentarios
 from miapp.forms import comentariosForm
+from django.shortcuts import get_object_or_404,render
+
 
 # Create your views here.
 
@@ -14,26 +16,25 @@ def indice(request):
 def tipo(request,tipo_nombre):
 	lista_articulos = articulos.objects.filter(tipo=tipo_nombre)
 	return render (request, 'miapp/articulos.html', {'lista_articulos': lista_articulos})
-	
+
+
 def tallas(request,articulo_id):
 	if request.method == 'POST':
 		form = comentariosForm(request.POST)
 		if form.is_valid():
 			comentario = form.save()
 			comentario.usuario = request.user
+			comentario.articulos = request.path[7:]
 			comentario.save()
 			return HttpResponseRedirect("/item/")
 	else:
 		lista_tallas = item.objects.filter(articulos=articulo_id)
 		lista_comentarios = comentarios.objects.filter(articulos=articulo_id)
 		form = comentariosForm()
-	return render (request, 'miapp/tallas.html', {'lista_tallas': lista_tallas,'form': form,'lista_comentarios': lista_comentarios})
+		articulo = get_object_or_404(articulos, pk = articulo_id)
+	return render (request, 'miapp/tallas.html', {'lista_tallas': lista_tallas,'form': form,'lista_comentarios': lista_comentarios, 'articulo': articulo})
 	
 	
-	
-	
-
-
 def registro(request):
 	if request.method == 'POST':
 		form = UserCreationForm(request.POST)

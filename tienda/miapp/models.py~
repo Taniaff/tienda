@@ -17,6 +17,6 @@ class item(models.Model):
 		return '%s' % (self.talla)
 
 class comentarios(models.Model):
-	tema = models.CharField(max_length=100)
+	comentario = models.CharField(max_length=100)
 	articulos = models.ForeignKey(articulos)
 	usuario = models.ForeignKey (User)

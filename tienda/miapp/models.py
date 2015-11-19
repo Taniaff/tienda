@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 class articulos(models.Model):
 	tipo = models.CharField(max_length=20)
 	nombre = models.CharField(max_length=50)
+	foto = models.ImageField(upload_to='miapp/static/media')
 	def __str__(self):
 		return '%s' % (self.nombre)
 

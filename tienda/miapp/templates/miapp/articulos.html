@@ -3,10 +3,18 @@
 	</head>
 	<body>
 		
-		<ul>
+		<table border="2">
+		<tr>
+			<td>NOMBRE</td>
+			<td>FOTO</td>
+					
+		</tr>
 			{% for articulos in lista_articulos %}
-				<li><a href="{% url 'tallas' articulos.id %}">{{ articulos.nombre }}</a></li>
+			<tr>
+				<td><a href="{% url 'tallas' articulos.id %}">{{ articulos.nombre }}</a></td>
+				<td><img src="/{{articulos.foto}}"></td>
+			</tr>
 			{% endfor %}
-		</ul>
+		</table>
 		
 	</body>

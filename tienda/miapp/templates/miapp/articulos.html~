@@ -5,7 +5,7 @@
 		
 		<ul>
 			{% for articulos in lista_articulos %}
-				<li><a href"{% url 'tallas' articulos.id %}">{{ articulos.nombre }}</a></li>
+				<li><a href="{% url 'tallas' articulos.id %}">{{ articulos.nombre }}</a></li>
 			{% endfor %}
 		</ul>
 		
