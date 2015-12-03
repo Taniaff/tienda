@@ -4,6 +4,7 @@ from django.contrib.auth import login,logout,authenticate
 from django.http import HttpResponseRedirect
 from miapp.models import articulos,item,comentarios
 from miapp.forms import comentariosForm
+from django.shortcuts import get_object_or_404,render
 
 
 # Create your views here.
@@ -14,7 +15,7 @@ def indice(request):
 
 def tipo(request,tipo_nombre):
 	lista_articulos = articulos.objects.filter(tipo=tipo_nombre)
-	return render (request, 'miapp/articulos.html', {'lista_articulos': lista_articulos})
+	return render (request, 'miapp/articulos.html', {'lista_articulos': lista_articulos,'tipo_nombre':tipo_nombre})
 
 
 def tallas(request,articulo_id):
@@ -34,10 +35,6 @@ def tallas(request,articulo_id):
 	return render (request, 'miapp/tallas.html', {'lista_tallas': lista_tallas,'form': form,'lista_comentarios': lista_comentarios, 'articulo': articulo})
 	
 	
-	
-	
-
-
 def registro(request):
 	if request.method == 'POST':
 		form = UserCreationForm(request.POST)

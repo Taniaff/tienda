@@ -1,6 +1,8 @@
+{% load staticfiles %}
 <html>
 	<head>
 		<title>MI TIENDA</title>
+		<link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}">
 	</head>
 	<body>
 		{% if user.is_authenticated %}
@@ -17,11 +19,8 @@
 			</ul>
 		</nav>
 		{% if lista_articulos %}
-			<table border="2">
-				<tr>
-					<td>Todo</td>
-					
-				</tr>
+			<table>
+				
 				{% for Articulo in lista_articulos %}
 					<tr>
 						<td><a href="{% url 'tipo' Articulo.tipo %}">{{ Articulo.tipo }}</a><td>

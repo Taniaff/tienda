@@ -2,21 +2,13 @@
 		<title>tallas</title>
 	</head>
 	<body>
-	<table border="1" style="width:100%">
-		<img src="/{{articulo.foto}}">
-		<tr>
-			<td>TALLA</td>
-			<td>COLOR</td>
-					
-		</tr>
-		
-			{% for talla in lista_tallas %}
-			<tr>
-				<td>{{ talla.talla }}</td>
-				<td>{{ talla.color }}</td>
-			</tr>
-		        {% endfor %}
-	</table>
+	<img src="/{{articulo.foto}}"><br>
+		<select name="talla">
+		<option selected>Talla</option>
+		{% for talla in lista_tallas %}
+		<option>{{ talla.talla }}</option>
+		{% endfor %}
+		</select>
 
 	{% if lista_comentarios %}
 		<p>Comentarios de los usuarios:</p>

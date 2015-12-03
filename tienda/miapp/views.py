@@ -15,7 +15,7 @@ def indice(request):
 
 def tipo(request,tipo_nombre):
 	lista_articulos = articulos.objects.filter(tipo=tipo_nombre)
-	return render (request, 'miapp/articulos.html', {'lista_articulos': lista_articulos})
+	return render (request, 'miapp/articulos.html', {'lista_articulos': lista_articulos,'tipo_nombre':tipo_nombre})
 
 
 def tallas(request,articulo_id):

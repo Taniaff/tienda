@@ -1,0 +1,22 @@
+*{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+table{
+	margin: auto;
+	text-align: left;
+}
+
+#tipo{
+	height: 20%;
+	background-color: blue;
+}
+
+#tipo.p{
+	padding-top: 50px;
+	font-size: 30px;
+}
+
+

@@ -1,21 +1,23 @@
+{% load staticfiles %}
+<html>
 	<head>
 		<title>articulos</title>
+		<link rel="stylesheet" type="text/css" href="{% static "css/articulos.css" %}">
 	</head>
 	<body>
+		<div id="tipo">
+		<p>{{ tipo_nombre }}</p>
+		</div>
 		
-		<table border="2">
-		<tr>
-			<td>NOMBRE</td>
-			<td>FOTO</td>
-					
-		</tr>
+		
 			{% for articulos in lista_articulos %}
-			<tr>
-				<td><a href="{% url 'tallas' articulos.id %}">{{ articulos.nombre }}</a></td>
-				<td>{{ articulos.precio }}</td>
-				<td><img src="/{{articulos.foto}}"></td>
-			</tr>
+				<img src="/{{articulos.foto}}">
+				<a href="{% url 'tallas' articulos.id %}">{{ articulos.nombre }}</a>
+				<p>{{ articulos.precio }}</p>
+				
+			
 			{% endfor %}
-		</table>
+		
 		
 	</body>
+</html>
