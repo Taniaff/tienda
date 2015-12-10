@@ -18,15 +18,16 @@ def tipo(request,tipo_nombre):
 	return render (request, 'miapp/articulos.html', {'lista_articulos': lista_articulos,'tipo_nombre':tipo_nombre})
 
 
-def tallas(request,articulo_id):
+def tallas(request, articulo_id):
 	if request.method == 'POST':
 		form = comentariosForm(request.POST)
 		if form.is_valid():
 			comentario = form.save()
 			comentario.usuario = request.user
-			comentario.articulos = request.path[7:]
+			articulo = get_object_or_404(articulos, pk = articulo_id)
+			comentario.articulos = articulo
 			comentario.save()
-			return HttpResponseRedirect("/item/")
+			return HttpResponseRedirect("/item/"+articulo_id)
 	else:
 		lista_tallas = item.objects.filter(articulos=articulo_id)
 		lista_comentarios = comentarios.objects.filter(articulos=articulo_id)

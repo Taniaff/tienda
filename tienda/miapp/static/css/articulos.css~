@@ -7,6 +7,7 @@
 	height: 150px;
 	background-color: blue;
 	margin-top: 20px;
+	background-image: url(fondo.jpeg);
 }
 #tipo p{
 	padding-top: 50px;
@@ -15,3 +16,6 @@
 img{
 	padding-top: 20px;
 }
+
+	
+

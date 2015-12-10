@@ -5,9 +5,8 @@
 }
 #tipo{
 	height: 150px;
-	background-color: blue;
 	margin-top: 20px;
-	background-image: url(jeans.jpeg);
+	background-image: url(fondo.jpeg);
 }
 #tipo p{
 	padding-top: 50px;

@@ -20,5 +20,5 @@ class item(models.Model):
 
 class comentarios(models.Model):
 	comentario = models.CharField(max_length=100)
-	articulos = models.ForeignKey(articulos)
-	usuario = models.ForeignKey (User)
+	articulos = models.ForeignKey(articulos,null=True)
+	usuario = models.ForeignKey (User,null=True)
