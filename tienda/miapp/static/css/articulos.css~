@@ -2,19 +2,24 @@
 	margin: 0;
 	padding: 0;
 	text-align: center;
+	
 }
 #tipo{
 	height: 150px;
-	background-color: blue;
-	margin-top: 20px;
-	background-image: url(fondo.jpeg);
+	background-image: url(flores.jpeg);
+	
+	
 }
 #tipo p{
-	padding-top: 50px;
-	font-size: 30px;
+	padding-top: 20px;
+	font-size: 80px;
+	font-weight:bold;
 }
 img{
 	padding-top: 20px;
+}
+#foto{
+	background-color:#FFF8DC;
 }
 
 	

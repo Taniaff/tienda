@@ -9,7 +9,7 @@
 		<p>{{ tipo_nombre }}</p>
 		</div>
 		
-		
+		<div id="foto">
 			{% for articulos in lista_articulos %}
 				<img src="/{{articulos.foto}}"><br>
 				<a href="{% url 'tallas' articulos.id %}">{{ articulos.nombre }}</a>
@@ -17,7 +17,8 @@
 				
 			
 			{% endfor %}
-		
+
+		</div>
 		
 	</body>
 </html>

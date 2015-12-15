@@ -24,17 +24,17 @@ def tallas(request, articulo_id):
 		if form.is_valid():
 			comentario = form.save()
 			comentario.usuario = request.user
-			print(request.path)
 			articulo = get_object_or_404(articulos, pk = articulo_id)
 			comentario.articulos = articulo
 			comentario.save()
-			return HttpResponseRedirect("/item/")
+			return HttpResponseRedirect("/item/"+articulo_id)
 	else:
 		lista_tallas = item.objects.filter(articulos=articulo_id)
 		lista_comentarios = comentarios.objects.filter(articulos=articulo_id)
 		form = comentariosForm()
 		articulo = get_object_or_404(articulos, pk = articulo_id)
-	return render (request, 'miapp/tallas.html', {'lista_tallas': lista_tallas,'form': form,'lista_comentarios': lista_comentarios, 'articulo': articulo})
+		lista_articulo = articulos.objects.values('nombre').distinct()
+	return render (request, 'miapp/tallas.html', {'lista_tallas': lista_tallas,'form': form,'lista_comentarios': lista_comentarios, 'articulo': articulo, 'lista_articulo':lista_articulo})
 	
 	
 def registro(request):

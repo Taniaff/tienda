@@ -11,7 +11,7 @@
 		
 		
 			{% for articulos in lista_articulos %}
-				<img src="/{{articulos.foto}}">
+				<img src="/{{articulos.foto}}"><br>
 				<a href="{% url 'tallas' articulos.id %}">{{ articulos.nombre }}</a>
 				<p>{{ articulos.precio }}</p>
 				
